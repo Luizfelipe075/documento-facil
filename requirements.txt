@@ -1,0 +1,33 @@
+# Coleta HTTP
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# Extração de PDF
+PyMuPDF>=1.24.0
+
+# Embeddings (local, multilíngue, ótimo para português)
+sentence-transformers>=3.0.0
+
+# Índice vetorial com persistência de metadados
+chromadb>=0.5.0
+
+# Contagem de tokens
+tiktoken>=0.7.0
+
+# Interface
+streamlit>=1.35.0
+
+# LLMs
+google-genai>=1.0.0
+openai>=1.30.0
+
+# Variáveis de ambiente
+python-dotenv>=1.0.0
+
+# Testes
+pytest>=8.0.0
+
+# Utilitários
+numpy>=1.26.0
+tqdm>=4.66.0

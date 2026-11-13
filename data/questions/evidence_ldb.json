@@ -1,0 +1,20 @@
+{
+  "_comment": "Evidências HEURÍSTICAS por pergunta (sidecar de test_questions.json). Cada lista contém ALTERNATIVAS: se QUALQUER uma aparecer (sem diferenciar acentos/maiúsculas) num chunk, o chunk é considerado relevante. Foram escritas a partir do conhecimento da LDB e NÃO foram conferidas contra a página real do Planalto: rode `python scripts/run_experiments.py --check-evidence` para ver quais não existem no seu corpus e corrija o que faltar. Perguntas sem resposta (q10, q11, q20) não têm evidência.",
+  "q01": ["20 de dezembro de 1996"],
+  "q02": ["estabelece as diretrizes e bases da educação nacional"],
+  "q03": ["o ensino será ministrado com base nos seguintes princípios"],
+  "q04": ["duzentos dias", "200 dias"],
+  "q05": ["iniciando-se aos 6 (seis) anos de idade", "aos 6 (seis) anos"],
+  "q06": ["a educação escolar compõe-se de"],
+  "q07": ["formada pela educação infantil"],
+  "q08": ["autorizar, reconhecer, credenciar, supervisionar e avaliar"],
+  "q09": ["categorias administrativas"],
+  "q12": ["dever da família e do Estado"],
+  "q13": ["etapa final da educação básica"],
+  "q14": ["entende-se por educação especial"],
+  "q15": ["oitocentas horas", "800 horas"],
+  "q16": ["avaliação contínua e cumulativa"],
+  "q17": ["que nortearão os currículos", "Conselho Nacional de Educação"],
+  "q18": ["Os Municípios incumbir-se-ão de"],
+  "q19": ["profissionais da educação"]
+}

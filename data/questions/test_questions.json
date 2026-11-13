@@ -1,0 +1,142 @@
+[
+  {
+    "id": "q01",
+    "category": "factual",
+    "question": "Qual e a data de publicacao da Lei no 9.394?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "LDB - Lei de Diretrizes e Bases da Educacao Nacional, publicada em 20/12/1996"
+  },
+  {
+    "id": "q02",
+    "category": "localizacao",
+    "question": "Qual lei estabelece as diretrizes e bases da educacao nacional?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Deve identificar a LDB (Lei 9.394/1996)"
+  },
+  {
+    "id": "q03",
+    "category": "sintese",
+    "question": "Quais sao os principios pelos quais o ensino sera ministrado?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Art. 3o da LDB lista os principios do ensino"
+  },
+  {
+    "id": "q04",
+    "category": "factual",
+    "question": "Quantos dias letivos minimos sao exigidos no ensino fundamental?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "200 dias letivos (Art. 24 da LDB)"
+  },
+  {
+    "id": "q05",
+    "category": "factual",
+    "question": "Qual e a idade minima para o ingresso no ensino fundamental?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "6 anos completos até 31 de março (Art. 32)"
+  },
+  {
+    "id": "q06",
+    "category": "sintese",
+    "question": "Quais sao os niveis e modalidades da educacao escolar no Brasil?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Educacao basica e educacao superior (Art. 21)"
+  },
+  {
+    "id": "q07",
+    "category": "localizacao",
+    "question": "O que e educacao basica segundo a LDB?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Educacao infantil, ensino fundamental e ensino medio"
+  },
+  {
+    "id": "q08",
+    "category": "factual",
+    "question": "Qual orgao e responsavel por autorizar o funcionamento de instituicoes de ensino superior?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Uniao, por meio do MEC"
+  },
+  {
+    "id": "q09",
+    "category": "comparativa",
+    "question": "Quais sao as diferencas entre educacao publica e privada segundo a LDB?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Deve identificar disposicoes de Art. 19 e seguintes"
+  },
+  {
+    "id": "q10",
+    "category": "sem_resposta",
+    "question": "Qual e a taxa de imposto de renda para pessoas juridicas estabelecida pela LDB?",
+    "expected_documents": [],
+    "notes": "A LDB nao trata de imposto de renda. O sistema deve responder que nao encontrou informacoes."
+  },
+  {
+    "id": "q11",
+    "category": "sem_resposta",
+    "question": "Qual e o valor minimo do salario minimo segundo a Lei 9394?",
+    "expected_documents": [],
+    "notes": "A LDB nao trata de salario minimo. Teste de alucinacao."
+  },
+  {
+    "id": "q12",
+    "category": "factual",
+    "question": "A educacao e um dever de quem segundo a LDB?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Dever da familia e do Estado (Art. 2o)"
+  },
+  {
+    "id": "q13",
+    "category": "sintese",
+    "question": "Quais sao as finalidades do ensino medio?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Art. 35 da LDB lista as finalidades do ensino medio"
+  },
+  {
+    "id": "q14",
+    "category": "localizacao",
+    "question": "O que e educacao especial segundo a LDB?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Modalidade de educacao escolar para pessoas com deficiencia (Art. 58)"
+  },
+  {
+    "id": "q15",
+    "category": "factual",
+    "question": "Qual e a carga horaria minima anual no ensino fundamental e medio?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "800 horas anuais distribuidas em 200 dias (Art. 24)"
+  },
+  {
+    "id": "q16",
+    "category": "ambigua",
+    "question": "Como funciona a avaliacao?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Pergunta ambigua - avaliacao de quem? O sistema deve lidar com ambiguidade"
+  },
+  {
+    "id": "q17",
+    "category": "factual",
+    "question": "A que orgao compete estabelecer as diretrizes curriculares nacionais?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Uniao, com auxilio do Conselho Nacional de Educacao"
+  },
+  {
+    "id": "q18",
+    "category": "sintese",
+    "question": "Quais sao as responsabilidades dos municipios na educacao?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Art. 11 - municipios devem ofertar educacao infantil e ensino fundamental"
+  },
+  {
+    "id": "q19",
+    "category": "localizacao",
+    "question": "O que diz a LDB sobre a formacao de professores?",
+    "expected_documents": ["poc_ldb_l9394"],
+    "notes": "Titulo VI - Dos Profissionais da Educacao"
+  },
+  {
+    "id": "q20",
+    "category": "sem_resposta",
+    "question": "Quais sao as regras de licitacao para compras publicas em escolas?",
+    "expected_documents": [],
+    "notes": "A LDB nao trata detalhadamente de licitacoes. Teste de alucinacao."
+  }
+]

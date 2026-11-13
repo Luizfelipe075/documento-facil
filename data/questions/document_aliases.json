@@ -1,0 +1,4 @@
+{
+  "_comment": "Mapeia o document_id simbólico usado em test_questions.json para trechos que aparecem no document_id/source_url real gerado pelo coletor (slug + hash). Sem isso, documentos coletados por run_pipeline.py nunca casariam com 'poc_ldb_l9394'.",
+  "poc_ldb_l9394": ["l9394"]
+}
