@@ -1,0 +1,16 @@
+{
+  "name": "documento-facil-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node --check netlify/functions/answer.mjs && node --check public/app.js",
+    "dev": "npx --yes netlify-cli@latest dev"
+  },
+  "dependencies": {
+    "@google/genai": "^1.30.0"
+  }
+}

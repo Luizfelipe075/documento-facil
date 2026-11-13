@@ -2,11 +2,44 @@
 
 > **IA para organização inteligente de documentos de interesse público**
 
-Sistema RAG (*Retrieval-Augmented Generation*) para coleta, busca semântica e síntese de documentos públicos brasileiros, com rastreabilidade total até o documento oficial.
+Aplicação web com Gemini Grounding para pesquisar informação pública na web, resumir a resposta e apresentar links das fontes consultadas.
 
 ---
 
-## Funcionalidades
+## Publicar no Netlify
+
+O site publicado usa `public/` e a função Node.js em `netlify/functions/answer.mjs`. A busca web e a geração acontecem no servidor Netlify; a chave Gemini nunca vai para o navegador.
+
+1. No Netlify, importe o repositório `Luizfelipe075/documento-facil`.
+2. O Netlify lê `netlify.toml`: comando de build `npm run build`, pasta publicada `public` e funções em `netlify/functions`.
+3. Em **Project configuration → Environment variables**, adicione `GEMINI_API_KEY` com a chave do Google AI Studio.
+4. Publique/republique o site. A página chama `/api/answer`; a função pesquisa a web com Gemini e retorna a resposta e as fontes.
+
+Não coloque a chave no código, no navegador ou em arquivos enviados ao GitHub. Configure-a apenas nas variáveis de ambiente do Netlify.
+
+### Executar localmente
+
+Requer Node.js 24 (definido em `.nvmrc`) e npm:
+
+```powershell
+npm install
+$env:GEMINI_API_KEY = "sua_chave_aqui"
+npm run dev
+```
+
+O script baixa o Netlify CLI quando necessário e abre o site e as funções em `http://localhost:8888`. Os passos aparecem na área **Atividade do fluxo** da página e os registros do servidor aparecem no terminal. No site publicado, os logs do servidor ficam no painel de funções do Netlify.
+
+A função limita cada endereço IP a 8 perguntas por minuto. Isso reduz abuso acidental do endpoint público; configure também limites de uso para a chave Gemini na sua conta Google.
+
+### O que a IA responde
+
+O Gemini faz uma busca web nova para cada pergunta. Ele pode responder sobre assuntos públicos que encontrar e citar; não conhece fatos privados nem deve ser tratado como fonte universal. Quando a busca não retorna fontes verificáveis suficientes, o app informa que não conseguiu confirmar a resposta. Para legislação e serviços públicos brasileiros, as instruções priorizam fontes oficiais.
+
+O pipeline Python/Streamlit abaixo foi mantido para pesquisa e uso local. Ele não é o backend do site Netlify.
+
+---
+
+## Funcionalidades do pipeline Python local (legado)
 
 - **Coleta automática** de legislação federal do Portal do Planalto
 - **Extração de texto** de PDFs (PyMuPDF) e páginas HTML (BeautifulSoup)
@@ -50,6 +83,9 @@ documento-facil/
 │       └── experiments.py        #   TASK 17: experimentos comparativos
 ├── app/
 │   └── streamlit_app.py      # Interface do usuário
+├── public/                   # Site publicado pelo Netlify
+├── netlify/functions/        # API serverless com Gemini e busca web
+├── netlify.toml              # Configuração de build, rotas e funções
 ├── scripts/
 │   ├── poc.py                # Prova de conceito (1 documento)
 │   ├── run_pipeline.py       # Pipeline completo
@@ -63,7 +99,7 @@ documento-facil/
 
 ---
 
-## Instalação
+## Instalação do protótipo Python local (legado)
 
 ### Abrir no PyCharm (Windows)
 
@@ -81,7 +117,7 @@ python -m pip install -r requirements.txt
 GOOGLE_API_KEY=sua_chave_aqui
 ```
 
-Também é possível colar a chave no campo protegido **Chave da API Gemini** na barra lateral do site. Nesse modo ela fica só na sessão atual do navegador; ao reiniciar, será preciso digitá-la novamente. Nunca compartilhe o `.env` nem publique a chave.
+O `.env` serve apenas para executar o protótipo Python local. Para o site Netlify, use a variável `GEMINI_API_KEY` nas configurações privadas do projeto Netlify. Nunca publique a chave.
 
 5. Para abrir a interface:
 
@@ -172,7 +208,7 @@ python scripts/run_pipeline.py --skip-collect
 python scripts/run_pipeline.py --skip-extract --reset-index
 ```
 
-### Fase 3 — Interface
+### Fase 3 — Interface Streamlit local
 
 ```bash
 streamlit run app/streamlit_app.py

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f5">
+    <meta name="description" content="Pesquise documentos e informações públicas com fontes verificáveis.">
+    <title>Documento Fácil — Pesquisa pública com fontes</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Documento Fácil, início">
+          <span class="brand-mark" aria-hidden="true">D</span>
+          <span>Documento Fácil</span>
+        </a>
+        <span class="top-note"><span class="live-dot"></span> Pesquisa web com fontes</span>
+      </header>
+
+      <main>
+        <section class="hero">
+          <p class="eyebrow">INFORMAÇÃO PÚBLICA, COM CONTEXTO</p>
+          <h1>O que você precisa encontrar?</h1>
+          <p class="hero-copy">Faça uma pergunta. O Gemini pesquisa a web, resume as informações encontradas e mostra os links das fontes.</p>
+
+          <form id="question-form" class="search-panel">
+            <label class="sr-only" for="question">Sua pergunta</label>
+            <textarea id="question" name="question" maxlength="1200" placeholder="Ex.: O que a Lei 14.133 diz sobre dispensa de licitação?" required></textarea>
+            <div class="search-footer">
+              <span id="char-count">0 / 1200</span>
+              <button id="submit-button" type="submit"><span>Pesquisar</span><span aria-hidden="true">↗</span></button>
+            </div>
+          </form>
+          <div class="examples" aria-label="Perguntas de exemplo">
+            <span>Experimente:</span>
+            <button class="example-chip" type="button" data-question="Quais são os princípios da administração pública na Constituição Federal?">Princípios da administração pública</button>
+            <button class="example-chip" type="button" data-question="O que estabelece a Lei de Diretrizes e Bases da Educação?">Lei de Diretrizes e Bases</button>
+          </div>
+        </section>
+
+        <section id="activity" class="activity" aria-live="polite" hidden>
+          <div class="activity-head"><span class="spinner" aria-hidden="true"></span><strong id="activity-title">Preparando a pesquisa…</strong></div>
+          <ol id="activity-steps" class="activity-steps">
+            <li data-step="search"><span class="step-icon">1</span><span>Pesquisando páginas e documentos na web</span><span class="step-state"></span></li>
+            <li data-step="ground"><span class="step-icon">2</span><span>Conferindo fontes para a resposta</span><span class="step-state"></span></li>
+            <li data-step="answer"><span class="step-icon">3</span><span>Preparando o resumo com o Gemini</span><span class="step-state"></span></li>
+          </ol>
+        </section>
+
+        <section id="result" class="result" aria-live="polite" hidden>
+          <div class="result-heading"><div><p class="eyebrow">RESULTADO DA PESQUISA</p><h2>Resposta</h2></div><span id="grounded-badge" class="grounded-badge">Com fontes</span></div>
+          <div id="answer-text" class="answer-text"></div>
+          <div id="sources-section" class="sources-section" hidden>
+            <div class="section-heading"><h3>Fontes consultadas</h3><span id="source-count" class="source-count"></span></div>
+            <ul id="sources-list" class="sources-list"></ul>
+          </div>
+          <p class="ai-note">Resposta gerada por IA a partir da busca web. Consulte as fontes oficiais para confirmar o texto integral. Não constitui orientação jurídica.</p>
+        </section>
+
+        <section id="error-box" class="error-box" role="alert" hidden></section>
+
+        <details class="terminal-panel">
+          <summary><span class="terminal-icon" aria-hidden="true">›_</span><span>Atividade do fluxo</span><span class="terminal-hint">esta sessão</span></summary>
+          <div id="terminal-log" class="terminal-log" aria-live="polite"><div class="log-line"><span class="log-muted">Aguardando uma pergunta.</span></div></div>
+          <p class="terminal-foot">Os logs completos das funções publicadas também ficam no painel do Netlify.</p>
+        </details>
+      </main>
+
+      <footer class="page-footer"><span>Documento Fácil</span><span>Respostas com fontes verificáveis</span></footer>
+    </div>
+  </body>
+</html>
